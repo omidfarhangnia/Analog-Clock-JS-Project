@@ -24,35 +24,67 @@
 }
 .AN__clock{
 	border-radius: 50%;
-	border: 1rem solid #fff;
+	border: 1rem solid #ffffff;
+	position: relative;
 }
-.AN__clock--point--container{
+.AN__clock--point--container , .hour__cross--container , .minute__cross--container{
 	width: 100%;
 	height: 100%;
     position: relative;
 }
 .AN__clock__points{
 	width: 1rem;
-	height: 3rem;
-	background: #fff;
+	height: 2rem;
+	background: #ffffff;
 	position: absolute;
 }
 .point--number--1{right: 23.5%; rotate: 30deg; top: 7%;}
 .point--number--2{right: 6%; rotate: 60deg; top: 25%;}
-.point--number--3{right: 0; rotate: 90deg; top: calc(50% - 1.5rem);}
+.point--number--3{right: 0; rotate: 90deg; top: calc(50% - 1rem);}
 .point--number--4{right: 6%; rotate: 120deg; bottom: 25%;}
 .point--number--5{right: 23.5%; rotate: 150deg; bottom: 7%;}
 .point--number--6{right: calc(50% - .5rem); bottom: 0;}
 .point--number--7{left: 6%; rotate: -120deg; bottom: 25%;}
 .point--number--8{left: 23.5%; rotate: -150deg; bottom: 7%;}
-.point--number--9{left: 0; rotate: -90deg; top: calc(50% - 1.5rem);}
+.point--number--9{left: 0; rotate: -90deg; top: calc(50% - 1rem);}
 .point--number--10{left: 6%; rotate: -60deg; top: 25%;}
 .point--number--11{left: 23.5%; rotate: -30deg; top: 7%;}
 .point--number--12{right: calc(50% - .5rem); top: 0;}
+.hour__cross--container , .minute__cross--container , .second__cross--container{
+	position: absolute;
+	height: 1rem;
+	top: calc(50% - .5rem);
+}
+.hour__cross--container{
+	width: 80%;
+	right: 10%;
+}
+.minute__cross--container , .second__cross--container{
+	width: 94%;
+	right: 3%;
+}
+.hour__cross{
+	width: 50%;
+	height: 1rem;
+	/* background: red; */
+}
+.minute__cross{
+	width: 60%;
+	height: 1rem;
+	/* background: red; */
+}
+.second__cross{
+	width: 60%;
+	height: .3rem;
+    translate: 0 .3rem;
+	/* background: green; */
+}
+.center__point{
+
+}
 @media (max-width: 667px){
     :root{
 		font-size: 6px;
-
     }
 }
 @media (min-width: 668px) {
