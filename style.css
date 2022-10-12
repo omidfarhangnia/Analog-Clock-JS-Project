@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main__container{
+    background: linear-gradient(to right , #833ab4, #fd1d1d , #fcb045);
+    background-size: 400% 100%;
+    animation: BackgroundAnimation 60s ease infinite;
+    height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@keyframes BackgroundAnimation {
+	0% {
+		background-position-x: 0%;
+	}
+	50% {
+		background-position-x: 100%;
+	}
+	100% {
+		background-position-x: 0%;
+	}
+}
+.AN__clock{
+	border-radius: 50%;
+	border: 1rem solid #fff;
+}
+@media (max-width: 667px){
+    :root{
+        font-size: 3px;
+    }
+}
+@media (min-width: 668px) {
+    :root{
+        font-size: 9px;
+    }
+}
+@media (min-width: 1100px) {
+    :root{
+        font-size: 15px;
+    }
+}
