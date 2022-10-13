@@ -14,26 +14,32 @@ function PutClockDimension(){
     };   
 }
 
-var PresentHour , PresentMinute , PresentSecond;
+var PresentTime = new Date() , PresentSecondClone;
+var PresentHour = PresentTime.getHours();
+var PresentMinute = PresentTime.getMinutes();
+var PresentSecond =  PresentTime.getSeconds();
 const HOUR__ARROW = document.querySelector(".hour__arrow--container");
 const MINUTE__ARROW = document.querySelector(".minute__arrow--container");
 const SECOND__ARROW = document.querySelector(".second__arrow--container");
 
 setInterval(() => {
-    var PresentTime = new Date();
-    PresentHour = PresentTime.getHours();
-    PresentMinute = PresentTime.getMinutes();
-    PresentSecond = PresentTime.getSeconds();
-
+    PresentSecond += 1;
+    PresentSecondClone = PresentSecond;
+    if((PresentSecondClone == 60) >= 1){
+        PresentMinute += 1;
+        PresentSecondClone = 0;
+    }
     SecondArrowMove(PresentSecond);
+    MinuteArrowMove(PresentMinute);
+    console.log(PresentMinute)
 }, 1000);
 
 function HourArrowMove(){
     
 }
-function MinuteArrowMove(){
-    
+function MinuteArrowMove(PresentMinute){
+    MINUTE__ARROW.style.rotate = `${(PresentMinute * 6) + 90}deg`;
 }
 function SecondArrowMove(PresentSecond){
-    SECOND__ARROW.style.rotate = `${PresentSecond * 6}deg`;
+    SECOND__ARROW.style.rotate = `${(PresentSecond * 6) + 90}deg`;
 }
