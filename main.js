@@ -13,3 +13,27 @@ function PutClockDimension(){
         ANALOG__CLOCK.style.height = `${(WINDOW__WIDTH / 5) * 4}px`;
     };   
 }
+
+var PresentHour , PresentMinute , PresentSecond;
+const HOUR__ARROW = document.querySelector(".hour__arrow--container");
+const MINUTE__ARROW = document.querySelector(".minute__arrow--container");
+const SECOND__ARROW = document.querySelector(".second__arrow--container");
+
+setInterval(() => {
+    var PresentTime = new Date();
+    PresentHour = PresentTime.getHours();
+    PresentMinute = PresentTime.getMinutes();
+    PresentSecond = PresentTime.getSeconds();
+
+    SecondArrowMove(PresentSecond);
+}, 1000);
+
+function HourArrowMove(){
+    
+}
+function MinuteArrowMove(){
+    
+}
+function SecondArrowMove(PresentSecond){
+    SECOND__ARROW.style.rotate = `${PresentSecond * 6}deg`;
+}
