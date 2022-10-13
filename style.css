@@ -59,7 +59,7 @@ div[class *="AN__clock__points"]{
 	position: absolute;
 	height: 1rem;
 	top: calc(50% - .5rem);
-	transition: all .05s ease-in-out;
+    transition: all .9s ease-in;
 }
 .hour__arrow--container{
 	width: 80%;
