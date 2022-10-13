@@ -4,10 +4,12 @@ window.addEventListener("load" , ChangeClockTransition);
 window.addEventListener("resize" , PutClockDimension);
 
 var ANALOG__CLOCK = document.getElementById("Analog__Clock");
-var PresentTime = new Date() , PresentSecondClone;
+var PresentTime = new Date();
 var PresentHour = PresentTime.getHours();
 var PresentMinute = PresentTime.getMinutes();
 var PresentSecond =  PresentTime.getSeconds();
+var PresentSecondClone = PresentSecond;
+// i need to have PresentSecond in the other variable because i have to change PresentSecond value but i cant change the main value
 const HOUR__ARROW = document.querySelector(".hour__arrow--container");
 const MINUTE__ARROW = document.querySelector(".minute__arrow--container");
 const SECOND__ARROW = document.querySelector(".second__arrow--container");
@@ -34,16 +36,15 @@ function PutClockDimension(){
 
 setInterval(() => {
     PresentSecond += 1;
-    PresentSecondClone = PresentSecond;
-    // i need to have present second and minute in the other variables because i should change their value but i cant chang the value of main values
-    if((PresentSecondClone == 60) >= 1){
+    PresentSecondClone += 1;
+    if(PresentSecondClone == 60){
         PresentMinute += 1;
         PresentSecondClone = 0;
     }
     SecondArrowMove(PresentSecond);
     MinuteArrowMove(PresentMinute);
     HourArrowMove(PresentHour , PresentMinute);
-}, 1000);
+}, 400);
 
 function HourArrowMove(PresentHour , PresentMinute){
     if(PresentHour > 12){
