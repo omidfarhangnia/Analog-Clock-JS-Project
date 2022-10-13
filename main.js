@@ -44,7 +44,7 @@ setInterval(() => {
     SecondArrowMove(PresentSecond);
     MinuteArrowMove(PresentMinute);
     HourArrowMove(PresentHour , PresentMinute);
-}, 400);
+}, 1000);
 
 function HourArrowMove(PresentHour , PresentMinute){
     if(PresentHour > 12){
