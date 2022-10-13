@@ -25,21 +25,28 @@ const SECOND__ARROW = document.querySelector(".second__arrow--container");
 setInterval(() => {
     PresentSecond += 1;
     PresentSecondClone = PresentSecond;
+    // i need to have present second and minute in the other variables because i should change their value but i cant chang the value of main values
     if((PresentSecondClone == 60) >= 1){
         PresentMinute += 1;
         PresentSecondClone = 0;
     }
     SecondArrowMove(PresentSecond);
     MinuteArrowMove(PresentMinute);
-    console.log(PresentMinute)
+    HourArrowMove(PresentHour , PresentMinute);
 }, 1000);
 
-function HourArrowMove(){
-    
+function HourArrowMove(PresentHour , PresentMinute){
+    if(PresentHour > 12){
+        PresentHour -= 12;
+    }
+    HOUR__ARROW.style.rotate = `${((PresentHour * 30) + (PresentMinute / 2))}deg`;
+    // 30 = 360 / 12
 }
 function MinuteArrowMove(PresentMinute){
-    MINUTE__ARROW.style.rotate = `${(PresentMinute * 6) + 90}deg`;
+    MINUTE__ARROW.style.rotate = `${(PresentMinute * 6)}deg`;
+    // 6 = for every minute we have 6 degree
 }
 function SecondArrowMove(PresentSecond){
-    SECOND__ARROW.style.rotate = `${(PresentSecond * 6) + 90}deg`;
+    SECOND__ARROW.style.rotate = `${(PresentSecond * 6)}deg`;
+    // 6 = for every second we have 6 degree
 }
