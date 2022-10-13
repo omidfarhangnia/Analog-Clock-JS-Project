@@ -62,8 +62,8 @@ div[class *="AN__clock__points"]{
     transition: all .9s ease-in;
 }
 .hour__arrow--container{
-	width: 80%;
-	right: 10%;
+	width: 60%;
+	right: 20%;
 }
 .minute__arrow--container{
 	width: 86%;
