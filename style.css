@@ -26,8 +26,9 @@
 	border-radius: 50%;
 	border: 1rem solid #ffffff;
 	position: relative;
+	transform: rotate(90deg);
 }
-.AN__clock--point--container , .hour__cross--container , .minute__cross--container{
+.AN__clock--point--container{
 	width: 100%;
 	height: 100%;
     position: relative;
@@ -38,49 +39,62 @@
 	background: #ffffff;
 	position: absolute;
 }
-.point--number--1{right: 23.5%; rotate: 30deg; top: 7%;}
-.point--number--2{right: 6%; rotate: 60deg; top: 25%;}
-.point--number--3{right: 0; rotate: 90deg; top: calc(50% - 1rem);}
-.point--number--4{right: 6%; rotate: 120deg; bottom: 25%;}
-.point--number--5{right: 23.5%; rotate: 150deg; bottom: 7%;}
-.point--number--6{right: calc(50% - .5rem); bottom: 0;}
-.point--number--7{left: 6%; rotate: -120deg; bottom: 25%;}
-.point--number--8{left: 23.5%; rotate: -150deg; bottom: 7%;}
-.point--number--9{left: 0; rotate: -90deg; top: calc(50% - 1rem);}
-.point--number--10{left: 6%; rotate: -60deg; top: 25%;}
-.point--number--11{left: 23.5%; rotate: -30deg; top: 7%;}
-.point--number--12{right: calc(50% - .5rem); top: 0;}
-.hour__cross--container , .minute__cross--container , .second__cross--container{
+.point--number--1{left: 6%; rotate: -60deg; top: 23.8%;}
+.point--number--2{left: 24.8%; rotate: -31deg; top: 6%;}
+.point--number--3{right: calc(50% - .5rem); top: 0;}
+.point--number--4{right: 24.8%; rotate: 31deg; top: 6%;}
+.point--number--5{right: 6%; rotate: 60deg; top: 23.8%;}
+.point--number--6{right: 0; rotate: 90deg; top: calc(50% - 1rem);}
+.point--number--7{right: 7%; rotate: 120deg; bottom: 24%;}
+.point--number--8{right: 24.5%; rotate: 150deg; bottom: 6%;}
+.point--number--9{right: calc(50% - .5rem); bottom: 0;}
+.point--number--10{left: 24.5%; rotate: -150deg; bottom: 6%;}
+.point--number--11{left: 7%; rotate: -120deg; bottom: 24%;}
+.point--number--12{left: 0; rotate: -90deg; top: calc(50% - 1rem);}
+.hour__arrow--container , .minute__arrow--container , .second__arrow--container{
 	position: absolute;
 	height: 1rem;
 	top: calc(50% - .5rem);
+	transform: all .5s;
 }
-.hour__cross--container{
+.hour__arrow--container{
 	width: 80%;
 	right: 10%;
 }
-.minute__cross--container , .second__cross--container{
-	width: 94%;
-	right: 3%;
+.minute__arrow--container{
+	width: 86%;
+	right: 7%;
 }
-.hour__cross{
+.second__arrow--container{
+	width: 90%;
+	right: 5%;
+}
+.hour__arrow{
 	width: 50%;
 	height: 1rem;
-	/* background: red; */
+	background: #ffffff;
+	border-radius: 5px;
 }
-.minute__cross{
-	width: 60%;
+.minute__arrow{
+	width: 57%;
 	height: 1rem;
-	/* background: red; */
+	background: #ffffff;
+	border-radius: .5rem;
 }
-.second__cross{
+.second__arrow{
 	width: 60%;
 	height: .3rem;
-    translate: 0 .3rem;
-	/* background: green; */
+    translate: 0 calc(.7rem / 2);
+	background: #ffffff;
 }
 .center__point{
-
+    width: 4rem;
+	height: 4rem;
+	background: #ffffff;
+	border-radius: 50%;
+	position: absolute;
+	right: calc(50% - 2rem);
+	top: calc(50% - 2rem);
 }
 @media (max-width: 667px){
     :root{
@@ -97,4 +111,10 @@
     :root{
 		font-size: 15px;
     }
+	.center__point{
+		width: 3rem;
+		height: 3rem;
+		right: calc(50% - 1.5rem);
+		top: calc(50% - 1.5rem);
+	}
 }
